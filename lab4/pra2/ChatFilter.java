@@ -1,17 +1,11 @@
 public class ChatFilter {
-
     public static String filterLogs(String[] logs, String keyword) {
-
         StringBuilder report = new StringBuilder();
         int count = 0;
-
         keyword = keyword.toLowerCase();
 
         for (String line : logs) {
-
             String[] parts = line.split(" ", 3);
-
-            // Skip malformed lines
             if (parts.length < 3) {
                 continue;
             }
