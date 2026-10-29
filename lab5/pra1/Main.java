@@ -1,8 +1,10 @@
 abstract class Shape {
     abstract double area();
 }
+
 class Circle extends Shape {
     double radius;
+
     Circle(double radius) {
         this.radius = radius;
     }
@@ -43,7 +45,6 @@ class Triangle extends Shape {
 
 public class Main {
     public static void main(String[] args) {
-
         Shape[] shapes = {
             new Circle(5),
             new Rectangle(4, 6),
@@ -56,14 +57,8 @@ public class Main {
 
         for (Shape s : shapes) {
             double currentArea = s.area();
-
-            System.out.println(
-                s.getClass().getSimpleName() +
-                " Area = " + currentArea
-            );
-
+            System.out.println(s.getClass().getSimpleName() + " Area = " + currentArea);
             total += currentArea;
-
             if (currentArea > largest) {
                 largest = currentArea;
             }
