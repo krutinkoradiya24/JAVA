@@ -1,12 +1,9 @@
 import java.util.Scanner;
 
-// Record
-record Vehicle(String number, String type) { }
+record Vehicle(String number, String type) {}
 
 public class TollBooth {
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         int totalToll = 0;
@@ -15,7 +12,6 @@ public class TollBooth {
         int truckCount = 0;
 
         while (true) {
-
             System.out.print("Enter vehicle number (or done to stop): ");
             String number = sc.next();
 
@@ -58,3 +54,4 @@ public class TollBooth {
         sc.close();
     }
 }
+
