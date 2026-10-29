@@ -1,0 +1,25 @@
+package model;
+
+public class FixedDepositAccount extends Account {
+    private static final long serialVersionUID = 1L;
+
+    public FixedDepositAccount(String ownerName, long balance) {
+        super(ownerName, balance);
+    }
+
+    @Override
+    public double interestRate() {
+        return 7.0;
+    }
+
+    @Override
+    public boolean canWithdraw(long amount) {
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "[Fixed Deposit] " + super.toString() + " | (Locked)";
+    }
+}
+
