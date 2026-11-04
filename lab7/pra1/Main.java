@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -71,6 +76,8 @@ class Validator {
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         SignupForm form = new SignupForm(
             "",
             "verylongemailaddress123456789@example.com",

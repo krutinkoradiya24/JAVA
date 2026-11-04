@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class Thermostat {
     private String location;
     private int temperature;
@@ -44,6 +49,8 @@ public class Thermostat {
     }
 
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Thermostat t1 = new Thermostat("Living Room", 22);
         Thermostat t2 = new Thermostat("Bedroom");
 

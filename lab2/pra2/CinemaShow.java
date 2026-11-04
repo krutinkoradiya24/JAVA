@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class CinemaShow {
     private String title;
     private int seatsAvailable;
@@ -39,6 +44,8 @@ public class CinemaShow {
     }
 
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         CinemaShow show = new CinemaShow("Avengers", 50);
 
         System.out.println("Book 20: " + show.book(20) + ", Seats left: " + show.getSeatsAvailable());

@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -9,6 +14,8 @@ import java.util.Arrays;
 
 public class Loganalyzer {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Path folder = Paths.get("logs");
         String keyword = "ERROR";
 

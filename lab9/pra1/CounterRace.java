@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 class UnsynchronizedCounter {
     private int count = 0;
 
@@ -24,6 +29,8 @@ class SynchronizedCounter {
 
 public class CounterRace {
     public static void main(String[] args) throws InterruptedException {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         int numberOfThreads = 10;
         int incrementsPerThread = 10000;
         int expected = numberOfThreads * incrementsPerThread;

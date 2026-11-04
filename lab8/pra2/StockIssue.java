@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +68,8 @@ class Request {
 
 public class StockIssue {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Warehouse warehouse = new Warehouse();
 
         List<Request> requests = Arrays.asList(

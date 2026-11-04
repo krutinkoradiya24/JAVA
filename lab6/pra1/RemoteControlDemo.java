@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 interface Switchable {
     void on();
     void off();
@@ -46,6 +51,8 @@ interface SwitchPolicy {
 
 public class RemoteControlDemo {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Switchable[] devices = {
             new Fan(),
             new Light()

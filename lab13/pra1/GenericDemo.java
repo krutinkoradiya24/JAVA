@@ -1,9 +1,16 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class GenericDemo {
     public static <T> T firstElement(T[] array) {
         return array[0];
     }
 
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Box<Integer> b1 = new Box<>(100);
         System.out.println("Box Integer: " + b1.get());
         b1.set(200);

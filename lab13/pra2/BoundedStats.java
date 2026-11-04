@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class BoundedStats {
     static <N extends Number> double average(N[] values) {
         double sum = 0;
@@ -8,6 +13,8 @@ public class BoundedStats {
     }
 
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Integer[] intValues = {1, 2, 3, 4, 5};
         Double[] doubleValues = {1.0, 2.0, 3.0, 4.0, 5.0};
         Long[] longValues = {10L, 20L, 30L, 40L, 50L};

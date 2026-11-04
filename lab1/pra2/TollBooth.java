@@ -1,9 +1,16 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.Scanner;
 
 record Vehicle(String number, String type) {}
 
 public class TollBooth {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Scanner sc = new Scanner(System.in);
 
         int totalToll = 0;

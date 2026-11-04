@@ -1,7 +1,14 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         StudentService service = new StudentService();
         Scanner sc = new Scanner(System.in);
         boolean running = true;

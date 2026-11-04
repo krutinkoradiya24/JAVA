@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 class UnsafeSeatBooking {
     private int seatsLeft = 5;
 
@@ -46,6 +51,8 @@ class SafeSeatBooking {
 
 public class SeatBookingRace {
     public static void main(String[] args) throws InterruptedException {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         System.out.println("=== Without Synchronization ===");
         UnsafeSeatBooking unsafeBooking = new UnsafeSeatBooking();
         Thread[] unsafeThreads = new Thread[10];

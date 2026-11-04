@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 class SharedBuffer {
     private int item;
     private boolean available = false;
@@ -26,6 +31,8 @@ class SharedBuffer {
 
 public class ProducerConsumer {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         SharedBuffer buffer = new SharedBuffer();
 
         Thread producer = new Thread(() -> {

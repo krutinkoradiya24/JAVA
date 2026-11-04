@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -5,6 +10,8 @@ import java.util.Map;
 
 public class WordFrequency {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         String paragraph = "java is easy and java is powerful java is popular";
         String[] words = paragraph.toLowerCase().split("\\s+");
 

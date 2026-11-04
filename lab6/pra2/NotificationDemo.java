@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 @FunctionalInterface
 interface Notifier {
     void send(String message);
@@ -14,6 +19,8 @@ class UrgentEmail implements Notifier, Urgent {
 
 public class NotificationDemo {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Notifier email = message -> System.out.println("Email: " + message);
         Notifier sms = message -> System.out.println("SMS: " + message);
 

@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class PasswordChecker {
     public static boolean hasLength(String pw) {
         return pw != null && pw.length() >= 8;

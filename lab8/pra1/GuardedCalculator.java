@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,6 +14,8 @@ class DivideByZeroException extends Exception {
 
 public class GuardedCalculator {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Scanner sc = new Scanner(System.in);
         boolean success = false;
 

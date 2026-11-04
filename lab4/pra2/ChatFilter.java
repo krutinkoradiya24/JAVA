@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 public class ChatFilter {
     public static String filterLogs(String[] logs, String keyword) {
         StringBuilder report = new StringBuilder();

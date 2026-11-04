@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 import java.util.Scanner;
 
 public class VendingMachine {
@@ -6,6 +11,8 @@ public class VendingMachine {
     }
 
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         final int PRICE = 15;
         int total = 0;
         Scanner sc = new Scanner(System.in);

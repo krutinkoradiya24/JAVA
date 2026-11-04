@@ -1,3 +1,8 @@
+/**
+ * Student Name : Krutin
+ * Enrolment No : 25CS034
+ * Course       : CEUE203 - Object Oriented Programming
+ */
 abstract class Employee {
     String name;
     int id;
@@ -56,6 +61,8 @@ class Intern extends Employee {
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
+
         Employee[] employees = {
             new FullTime("Rahul", 101, 50000),
             new PartTime("Amit", 102, 80, 200),
