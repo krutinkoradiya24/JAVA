@@ -1,12 +1,8 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
+// Buffer using wait and notify
 class SharedBuffer {
     private int item;
     private boolean available = false;
-
+    // Put item in buffer
     public synchronized void produce(int value) throws InterruptedException {
         while (available) {
             wait();
@@ -16,7 +12,7 @@ class SharedBuffer {
         System.out.println("Produced: " + value);
         notify();
     }
-
+    // Get item from buffer
     public synchronized int consume() throws InterruptedException {
         while (!available) {
             wait();
@@ -28,13 +24,10 @@ class SharedBuffer {
         return value;
     }
 }
-
 public class ProducerConsumer {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         SharedBuffer buffer = new SharedBuffer();
-
+        // Producer thread
         Thread producer = new Thread(() -> {
             try {
                 for (int i = 1; i <= 5; i++) {
@@ -44,7 +37,7 @@ public class ProducerConsumer {
                 Thread.currentThread().interrupt();
             }
         });
-
+        // Consumer thread
         Thread consumer = new Thread(() -> {
             try {
                 for (int i = 1; i <= 5; i++) {
@@ -54,17 +47,14 @@ public class ProducerConsumer {
                 Thread.currentThread().interrupt();
             }
         });
-
         producer.start();
         consumer.start();
-
         try {
             producer.join();
             consumer.join();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-
         System.out.println("All items produced and consumed.");
     }
 }

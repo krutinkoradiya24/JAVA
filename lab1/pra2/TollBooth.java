@@ -1,45 +1,33 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.Scanner;
-
+// Record for vehicle
 record Vehicle(String number, String type) {}
-
 public class TollBooth {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         Scanner sc = new Scanner(System.in);
-
+        // Running toll total and vehicle counts
         int totalToll = 0;
         int bikeCount = 0;
         int carCount = 0;
         int truckCount = 0;
-
+        // Loop until user enters "done"
         while (true) {
             System.out.print("Enter vehicle number (or done to stop): ");
             String number = sc.next();
-
             if (number.equalsIgnoreCase("done")) {
                 break;
             }
-
             System.out.print("Enter vehicle type (bike/car/truck): ");
             String type = sc.next().toLowerCase();
-
             Vehicle vehicle = new Vehicle(number, type);
-
+            // Toll based on vehicle type
             int toll = switch (vehicle.type()) {
                 case "bike" -> 20;
                 case "car" -> 50;
                 case "truck" -> 150;
                 default -> 0;
             };
-
             totalToll += toll;
-
+            // Increment count for type
             switch (vehicle.type()) {
                 case "bike" -> bikeCount++;
                 case "car" -> carCount++;
@@ -47,9 +35,8 @@ public class TollBooth {
                 default -> System.out.println("Invalid vehicle type!");
             }
         }
-
         System.out.println("\nTotal toll: " + totalToll);
-
+        // Check which vehicle appeared the most
         if (bikeCount >= carCount && bikeCount >= truckCount) {
             System.out.println("Most frequent: bike");
         } else if (carCount >= bikeCount && carCount >= truckCount) {
@@ -57,8 +44,6 @@ public class TollBooth {
         } else {
             System.out.println("Most frequent: truck");
         }
-
         sc.close();
     }
 }
-

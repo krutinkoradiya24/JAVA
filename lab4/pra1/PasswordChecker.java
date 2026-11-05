@@ -1,13 +1,9 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 public class PasswordChecker {
+    // Rule 1: at least 8 chars
     public static boolean hasLength(String pw) {
         return pw != null && pw.length() >= 8;
     }
-
+    // Rule 2: uppercase letter
     public static boolean hasUpperCase(String pw) {
         for (int i = 0; i < pw.length(); i++) {
             if (Character.isUpperCase(pw.charAt(i))) {
@@ -16,7 +12,7 @@ public class PasswordChecker {
         }
         return false;
     }
-
+    // Rule 3: numeric digit
     public static boolean hasDigit(String pw) {
         for (int i = 0; i < pw.length(); i++) {
             if (Character.isDigit(pw.charAt(i))) {
@@ -25,7 +21,7 @@ public class PasswordChecker {
         }
         return false;
     }
-
+    // Rule 4: special character
     public static boolean hasSpecialCharacter(String pw) {
         for (int i = 0; i < pw.length(); i++) {
             char ch = pw.charAt(i);
@@ -35,14 +31,13 @@ public class PasswordChecker {
         }
         return false;
     }
-
+    // Rate password strength
     public static String strength(String pw) {
         int count = 0;
         if (hasLength(pw)) count++;
         if (hasUpperCase(pw)) count++;
         if (hasDigit(pw)) count++;
         if (hasSpecialCharacter(pw)) count++;
-
         if (count <= 1) {
             return "Weak";
         } else if (count <= 3) {

@@ -1,12 +1,6 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
+        // Cards list with a duplicate
         Card[] stream = {
             new Card("Ace", "Spades"),
             new Card("King", "Hearts"),
@@ -14,10 +8,9 @@ public class Driver {
             new Card("Ace", "Spades"),
             new Card("Jack", "Clubs")
         };
-
         Card[] cards = new Card[stream.length];
         int count = 0;
-
+        // Check each card against earlier cards
         for (Card c : stream) {
             boolean duplicate = false;
             for (int i = 0; i < count; i++) {
@@ -34,4 +27,3 @@ public class Driver {
         }
     }
 }
-

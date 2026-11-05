@@ -1,12 +1,6 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
+        // Array with repeated points
         Point[] points = {
             new Point(1, 2),
             new Point(3, 4),
@@ -14,8 +8,8 @@ public class Driver {
             new Point(5, 6),
             new Point(3, 4)
         };
-
         int distinct = 0;
+        // Check if each point was seen before
         for (int i = 0; i < points.length; i++) {
             boolean seenBefore = false;
             for (int j = 0; j < i; j++) {
@@ -28,8 +22,6 @@ public class Driver {
                 distinct++;
             }
         }
-
         System.out.println("Distinct: " + distinct);
     }
 }
-

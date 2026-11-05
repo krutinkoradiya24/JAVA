@@ -1,50 +1,37 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.reflect.Method;
-
+// Annotation to mark test methods
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @interface Run {}
-
 class MyTests {
     @Run
     public void testAddition() {
         System.out.println("Running testAddition");
     }
-
     @Run
     public void testSubtraction() {
         System.out.println("Running testSubtraction");
     }
-
     public void normalMethod() {
         System.out.println("This method should not run");
     }
-
     @Run
     public void testMessage() {
         System.out.println("Running testMessage");
     }
-
     public void anotherMethod() {
         System.out.println("This method should not run");
     }
 }
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         MyTests testObject = new MyTests();
         int count = 0;
-
+        // Find and run only methods annotated with @Run
         Method[] methods = MyTests.class.getDeclaredMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(Run.class) && method.getParameterCount() == 0) {
@@ -56,7 +43,6 @@ public class Main {
                 }
             }
         }
-
         System.out.println("\nTotal @Run methods executed: " + count);
     }
 }

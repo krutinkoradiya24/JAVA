@@ -1,24 +1,19 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 public class CinemaShow {
     private String title;
     private int seatsAvailable;
     private final int capacity;
     private static int totalBooked = 0;
-
+    // Constructor with title and capacity
     public CinemaShow(String title, int capacity) {
         this.title = title;
         this.capacity = capacity;
         this.seatsAvailable = capacity;
     }
-
+    // Default capacity is 100
     public CinemaShow(String title) {
         this(title, 100);
     }
-
+    // Book n seats
     public boolean book(int n) {
         if (n <= seatsAvailable) {
             seatsAvailable -= n;
@@ -27,27 +22,22 @@ public class CinemaShow {
         }
         return false;
     }
-
+    // Cancel n seats
     public void cancel(int n) {
         seatsAvailable += n;
         if (seatsAvailable > capacity) {
             seatsAvailable = capacity;
         }
     }
-
     public int getSeatsAvailable() {
         return seatsAvailable;
     }
-
     public static int getTotalBooked() {
         return totalBooked;
     }
-
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         CinemaShow show = new CinemaShow("Avengers", 50);
-
+        // Book and cancel tests
         System.out.println("Book 20: " + show.book(20) + ", Seats left: " + show.getSeatsAvailable());
         System.out.println("Book 40: " + show.book(40) + ", Seats left: " + show.getSeatsAvailable());
         System.out.println("Cancel 10");
@@ -56,4 +46,3 @@ public class CinemaShow {
         System.out.println("Total Booked: " + CinemaShow.getTotalBooked());
     }
 }
-

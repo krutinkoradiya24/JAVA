@@ -1,35 +1,24 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+// Custom checked exception for division by zero
 class DivideByZeroException extends Exception {
     public DivideByZeroException(String message) {
         super(message);
     }
 }
-
 public class GuardedCalculator {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         Scanner sc = new Scanner(System.in);
         boolean success = false;
-
+        // Loop until valid calculation succeeds
         while (!success) {
             try {
                 System.out.print("Enter first number: ");
                 double num1 = sc.nextDouble();
-
                 System.out.print("Enter operator (+, -, *, /): ");
                 char operator = sc.next().charAt(0);
-
                 System.out.print("Enter second number: ");
                 double num2 = sc.nextDouble();
-
                 double result;
                 switch (operator) {
                     case '+':
@@ -51,13 +40,11 @@ public class GuardedCalculator {
                         System.out.println("Invalid operator.");
                         continue;
                 }
-
                 System.out.println("Result = " + result);
                 success = true;
-
             } catch (InputMismatchException e) {
                 System.out.println("Invalid number input. Please enter numbers only.");
-                sc.nextLine();
+                sc.nextLine(); // Clear bad token
             } catch (DivideByZeroException e) {
                 System.out.println("Calculation error: " + e.getMessage());
                 sc.nextLine();
@@ -65,7 +52,6 @@ public class GuardedCalculator {
                 System.out.println("Attempt logged.");
             }
         }
-
         System.out.println("Valid calculation completed.");
         sc.close();
     }

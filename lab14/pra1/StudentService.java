@@ -1,24 +1,17 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.ArrayList;
-
+// Service to manage students
 public class StudentService {
     private ArrayList<Student> students = new ArrayList<>();
-
+    // Add student to list
     public void addStudent(Student student) {
         if (student == null) {
             throw new IllegalArgumentException("Student cannot be null");
         }
         students.add(student);
     }
-
     public ArrayList<Student> getStudents() {
         return new ArrayList<>(students);
     }
-
     public int getCount() {
         return students.size();
     }

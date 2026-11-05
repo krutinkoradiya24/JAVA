@@ -1,77 +1,64 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
+// Switchable interface with default toggle method
 interface Switchable {
     void on();
     void off();
-
     default void toggle() {
         on();
     }
 }
-
+// Fan class
 class Fan implements Switchable {
     private boolean isOn = false;
-
     @Override
     public void on() {
         isOn = true;
         System.out.println("Fan is ON");
     }
-
     @Override
     public void off() {
         isOn = false;
         System.out.println("Fan is OFF");
     }
 }
-
+// Light class
 class Light implements Switchable {
     private boolean isOn = false;
-
     @Override
     public void on() {
         isOn = true;
         System.out.println("Light is ON");
     }
-
     @Override
     public void off() {
         isOn = false;
         System.out.println("Light is OFF");
     }
 }
-
+// Functional interface to check if device may switch on
 @FunctionalInterface
 interface SwitchPolicy {
     boolean maySwitchOn(Switchable device, int hour);
 }
-
 public class RemoteControlDemo {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         Switchable[] devices = {
             new Fan(),
             new Light()
         };
-
+        // Toggle each device
         System.out.println("=== Toggling Devices ===");
         for (Switchable device : devices) {
             device.toggle();
         }
-
+        // Policy using anonymous class
         SwitchPolicy dayPolicy = new SwitchPolicy() {
             @Override
             public boolean maySwitchOn(Switchable device, int hour) {
                 return hour >= 6 && hour <= 18;
             }
         };
-
+        // Policy using lambda expression
         SwitchPolicy nightPolicy = (device, hour) -> hour >= 18 || hour <= 23;
-
         System.out.println("\n=== Policy Test ===");
         int hour = 10;
         for (Switchable device : devices) {

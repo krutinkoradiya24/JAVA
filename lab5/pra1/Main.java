@@ -1,67 +1,54 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
+// Base Shape class
 abstract class Shape {
     abstract double area();
 }
-
+// Circle subclass
 class Circle extends Shape {
     double radius;
-
     Circle(double radius) {
         this.radius = radius;
     }
-
     @Override
     double area() {
         return 3.14 * radius * radius;
     }
 }
-
+// Rectangle subclass
 class Rectangle extends Shape {
     double length, width;
-
     Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
-
     @Override
     double area() {
         return length * width;
     }
 }
-
+// Triangle subclass
 class Triangle extends Shape {
     double base, height;
-
     Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
-
     @Override
     double area() {
         return 0.5 * base * height;
     }
 }
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
+        // Array with different shapes
         Shape[] shapes = {
             new Circle(5),
             new Rectangle(4, 6),
             new Triangle(10, 5),
             new Circle(3)
         };
-
         double total = 0;
         double largest = 0;
-
+        // Loop to find areas and track largest
         for (Shape s : shapes) {
             double currentArea = s.area();
             System.out.println(s.getClass().getSimpleName() + " Area = " + currentArea);
@@ -70,7 +57,6 @@ public class Main {
                 largest = currentArea;
             }
         }
-
         System.out.println("\nTotal Area = " + total);
         System.out.println("Largest Area = " + largest);
     }

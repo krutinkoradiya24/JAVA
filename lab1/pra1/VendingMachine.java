@@ -1,46 +1,31 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.Scanner;
-
+// Enum for coin types
+enum Coin {
+    ONE, TWO, FIVE, TEN
+}
 public class VendingMachine {
-    enum Coin {
-        ONE, TWO, FIVE, TEN
-    }
-
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
-        final int PRICE = 15;
+        // Snack price and initial total
+        int price = 15;
         int total = 0;
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Snack price: " + PRICE);
-
-        while (total < PRICE) {
-            System.out.print("Insert coin (ONE, TWO, FIVE, TEN): ");
-            String input = sc.next().toUpperCase();
-
-            try {
-                Coin coin = Coin.valueOf(input);
-                int value = switch (coin) {
-                    case ONE -> 1;
-                    case TWO -> 2;
-                    case FIVE -> 5;
-                    case TEN -> 10;
-                };
-                total += value;
-                System.out.println("Total inserted: " + total);
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid coin.");
-            }
+        // Keep taking coins until total reaches 15
+        while (total < price) {
+            System.out.print("Enter coin (ONE, TWO, FIVE, TEN): ");
+            Coin coin = Coin.valueOf(sc.next().toUpperCase());
+            // Get value from coin using switch expression
+            int value = switch (coin) {
+                case ONE -> 1;
+                case TWO -> 2;
+                case FIVE -> 5;
+                case TEN -> 10;
+            };
+            total += value;
+            System.out.println("Total so far: " + total);
         }
-
-        int change = total - PRICE;
+        // Return change
+        int change = total - price;
         System.out.println("Paid. Change: " + change);
         sc.close();
     }
 }
-

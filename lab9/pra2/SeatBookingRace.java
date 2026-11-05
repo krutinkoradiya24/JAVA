@@ -1,11 +1,6 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
+// Unsafe booking leading to overselling
 class UnsafeSeatBooking {
     private int seatsLeft = 5;
-
     public boolean book(String name) {
         if (seatsLeft > 0) {
             try {
@@ -20,15 +15,13 @@ class UnsafeSeatBooking {
         System.out.println(name + " failed - no seats.");
         return false;
     }
-
     public int getSeatsLeft() {
         return seatsLeft;
     }
 }
-
+// Safe booking with synchronized method
 class SafeSeatBooking {
     private int seatsLeft = 5;
-
     public synchronized boolean book(String name) {
         if (seatsLeft > 0) {
             try {
@@ -43,16 +36,13 @@ class SafeSeatBooking {
         System.out.println(name + " failed - no seats.");
         return false;
     }
-
     public int getSeatsLeft() {
         return seatsLeft;
     }
 }
-
 public class SeatBookingRace {
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
+        // 1. Without synchronization
         System.out.println("=== Without Synchronization ===");
         UnsafeSeatBooking unsafeBooking = new UnsafeSeatBooking();
         Thread[] unsafeThreads = new Thread[10];
@@ -65,7 +55,7 @@ public class SeatBookingRace {
             t.join();
         }
         System.out.println("Seats remaining (Unsafe): " + unsafeBooking.getSeatsLeft());
-
+        // 2. With synchronization
         System.out.println("\n=== With Synchronization ===");
         SafeSeatBooking safeBooking = new SafeSeatBooking();
         Thread[] safeThreads = new Thread[10];

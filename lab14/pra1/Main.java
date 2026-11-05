@@ -1,31 +1,21 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         StudentService service = new StudentService();
         Scanner sc = new Scanner(System.in);
         boolean running = true;
-
         while (running) {
             System.out.println("\n--- Student Management ---");
             System.out.println("1. Add Student");
             System.out.println("2. List Students");
             System.out.println("3. Exit");
             System.out.print("Enter choice: ");
-
             if (!sc.hasNextInt()) {
                 break;
             }
             int choice = sc.nextInt();
-
             switch (choice) {
+                // Add student
                 case 1:
                     System.out.print("Enter ID: ");
                     int id = sc.nextInt();
@@ -37,12 +27,14 @@ public class Main {
                     service.addStudent(new Student(id, name, course));
                     System.out.println("Student added. Total: " + service.getCount());
                     break;
+                // View all students
                 case 2:
                     System.out.println("\nStudents List:");
                     for (Student s : service.getStudents()) {
                         System.out.println(s);
                     }
                     break;
+                // Exit
                 case 3:
                     running = false;
                     System.out.println("Goodbye!");

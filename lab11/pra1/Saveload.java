@@ -1,47 +1,37 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-
+// Serializable student class with transient password
 class Student implements Serializable {
     int id;
     String name;
-    transient String password;
-
+    transient String password; // Will not be saved
     Student(int id, String name, String password) {
         this.id = id;
         this.name = name;
         this.password = password;
     }
-
     void display() {
         System.out.println("ID: " + id + ", Name: " + name + ", Password: " + password);
     }
 }
-
 public class Saveload {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         Student[] students = {
             new Student(101, "Krutin", "abc123"),
             new Student(102, "Rahul", "xyz456")
         };
-
+        // Write objects to file
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("students.dat"))) {
             out.writeObject(students);
             System.out.println("Objects saved successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        // Read objects back from file
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.dat"))) {
             Student[] loadedStudents = (Student[]) in.readObject();
             System.out.println("\nObjects loaded successfully:");

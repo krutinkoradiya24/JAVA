@@ -6,10 +6,9 @@ This repository contains solutions for the Java Programming practical coursework
 
 ```text
 JAVA/
-├── lab1/ ... lab14/          # Weekly lab practicals (Part A)
+├── lab1/ ... lab14/          # Weekly lab practicals (Practicals 1 to 14)
 │   ├── pra1/                 # Problem 1
 │   └── pra2/                 # Problem 2
-├── MINIBANK/                 # Semester Project (Part B)
 └── README.md
 ```
 
@@ -57,19 +56,3 @@ JAVA/
 - **lab14**:
   - `pra1`: Layered Student Management Application with `ArrayList` and menu.
   - `pra2`: Serializable record persistence.
-
-## MiniBank Project
-
-Located in the `MINIBANK/` directory.
-
-### How to Compile and Run MiniBank
-```bash
-cd MINIBANK
-javac model\annotation\*.java exception\*.java model\*.java util\*.java repository\*.java service\*.java MiniBank.java
-java MiniBank
-```
-
-Or run the pre-built executable JAR:
-```bash
-java -jar minibank.jar
-```

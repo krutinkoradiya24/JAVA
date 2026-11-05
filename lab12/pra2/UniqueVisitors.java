@@ -1,17 +1,9 @@
-/**
- * Student Name : Krutin
- * Enrolment No : 25CS034
- * Course       : CEUE203 - Object Oriented Programming
- */
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
-
 public class UniqueVisitors {
     public static void main(String[] args) {
-        System.out.println("Enrolment No: 25CS034 | Name: Krutin");
-
         List<String> loginNames = Arrays.asList(
             "Krutin",
             "Rahul",
@@ -22,13 +14,13 @@ public class UniqueVisitors {
             "Priya",
             "Jay"
         );
-
+        // HashSet for counting unique users
         HashSet<String> uniqueUsers = new HashSet<>(loginNames);
+        // LinkedHashSet to preserve first-seen order
         LinkedHashSet<String> firstSeenUsers = new LinkedHashSet<>(loginNames);
-
         System.out.println("Unique users: " + uniqueUsers.size());
         System.out.println("First three distinct names:");
-
+        // Print first 3 unique users
         int count = 0;
         for (String name : firstSeenUsers) {
             System.out.println(name);
