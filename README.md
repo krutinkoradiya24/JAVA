@@ -9,6 +9,11 @@ JAVA/
 ├── lab1/ ... lab14/          # Weekly lab practicals (Practicals 1 to 14)
 │   ├── pra1/                 # Problem 1
 │   └── pra2/                 # Problem 2
+├── MINIBANK/                 # MiniBank Project
+│   ├── exception/            # Custom exception classes
+│   ├── model/                # Account model and annotations
+│   ├── service/              # Banking services, persister, and CLI
+│   └── util/                 # Regex validators
 └── README.md
 ```
 
@@ -56,3 +61,14 @@ JAVA/
 - **lab14**:
   - `pra1`: Layered Student Management Application with `ArrayList` and menu.
   - `pra2`: Serializable record persistence.
+
+## MiniBank Project
+
+The `MINIBANK/` directory contains an end-to-end banking application demonstrating OOP concepts, exception handling, multithreading synchronization, NIO file logging, and binary state persistence.
+
+### How to Compile & Run MiniBank
+```cmd
+cd MINIBANK
+javac exception/*.java model/annotation/*.java model/*.java util/*.java service/*.java
+java service.MiniBank
+```

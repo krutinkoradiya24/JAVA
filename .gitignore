@@ -1,5 +1,6 @@
 *.class
 *.dat
 logs/
+data/
 *.docx
 ~$*

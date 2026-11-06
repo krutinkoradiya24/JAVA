@@ -2,8 +2,13 @@
 interface Switchable {
     void on();
     void off();
+    boolean isOn();
     default void toggle() {
-        on();
+        if (isOn()) {
+            off();
+        } else {
+            on();
+        }
     }
 }
 // Fan class
@@ -19,6 +24,10 @@ class Fan implements Switchable {
         isOn = false;
         System.out.println("Fan is OFF");
     }
+    @Override
+    public boolean isOn() {
+        return isOn;
+    }
 }
 // Light class
 class Light implements Switchable {
@@ -33,8 +42,12 @@ class Light implements Switchable {
         isOn = false;
         System.out.println("Light is OFF");
     }
+    @Override
+    public boolean isOn() {
+        return isOn;
+    }
 }
-// Functional interface to check if device may switch on
+// Functional interface
 @FunctionalInterface
 interface SwitchPolicy {
     boolean maySwitchOn(Switchable device, int hour);
@@ -58,12 +71,15 @@ public class RemoteControlDemo {
             }
         };
         // Policy using lambda expression
-        SwitchPolicy nightPolicy = (device, hour) -> hour >= 18 || hour <= 23;
+        SwitchPolicy nightPolicy =
+            (device, hour) -> hour >= 18 || hour < 6;
         System.out.println("\n=== Policy Test ===");
         int hour = 10;
         for (Switchable device : devices) {
-            System.out.println("Anonymous class policy: " + dayPolicy.maySwitchOn(device, hour));
-            System.out.println("Lambda policy: " + nightPolicy.maySwitchOn(device, hour));
+            System.out.println("Anonymous class policy: "
+                    + dayPolicy.maySwitchOn(device, hour));
+            System.out.println("Lambda policy: "
+                    + nightPolicy.maySwitchOn(device, hour));
         }
     }
 }
